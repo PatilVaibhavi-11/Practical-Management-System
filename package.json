@@ -1,0 +1,21 @@
+{
+  "name": "practical-management-system",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "cd api && node index.js",
+    "dev": "cd api && nodemon index.js"
+  },
+  "author": "Vaibhavi",
+  "license": "ISC",
+  "description": "Backend project for Practical management system ",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "middleware": "^1.0.0",
+    "mongoose": "^8.8.2",
+    "nodemon": "^3.1.7",
+    "routes": "^2.1.0"
+  }
+}
