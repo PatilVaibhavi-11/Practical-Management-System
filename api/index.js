@@ -1,20 +1,16 @@
 import express from "express";
 import dotenv from "dotenv";
 import dbConnect from "../config/database.js";
-import router from "../routes/feedbackRoutes.js";
+import router from "../routes/FeedbackRoutes.js";
 
 const app = express();
 
-const PORT = process.env.PORT || 3111;
+const PORT = 3000 || process.env.PORT;
 
 app.use(express.json());
 
 //mounting api routes
 app.use("/api/v1",router)
-
-dotenv.config();
-const startServer = async () => {
-await dbConnect();
 
 app.get("/", (req, res)=>{
   res.json({
@@ -22,10 +18,13 @@ app.get("/", (req, res)=>{
     message: "Server Running Successfully"
   })
 })
-  
+
+dotenv.config();
+
+dbConnect();
+
+
+
 app.listen(PORT, () => {
   console.log("Server is running at port:", PORT);
 });
-};
-
-startServer();
